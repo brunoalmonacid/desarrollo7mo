@@ -39,4 +39,4 @@ def menu():
 if opcion == "1":
             a = int(input("Ingrese el primer número: "))
             b = int(input("Ingrese el segundo número: "))
-            print(f"Resultado: {sumar(a, b)}")+
+            print(f"Resultado: {sumar(a, b)}")
