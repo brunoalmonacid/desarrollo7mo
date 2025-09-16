@@ -1,7 +1,7 @@
 import pygame, sys
 from mario import Mario
 from peach import Peach
-from pruebas import Enemigo
+from POO.mariobros.enemigos import Enemigo
 
 pygame.init()
 
