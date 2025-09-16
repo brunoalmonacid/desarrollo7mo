@@ -7,12 +7,12 @@ ANCHO = 800
 class Mario(Personaje):
     def __init__(self, nombre, vidas, posicion_x, posicion_y, tirarFuego=True):
         super().__init__(nombre, vidas, posicion_x, posicion_y)
-        self.tirarFuego = bool(tirarFuego)
+        self._tirarFuego = bool(tirarFuego)
         self._last_shot = 0
-        self._shot_cooldown = 350  
+        self._shot_cooldown = 350
 
     def tirar_fuego(self):
-        if not self.tirarFuego:
+        if not self._tirarFuego:
             return
         ahora = pygame.time.get_ticks()
         if ahora - self._last_shot >= self._shot_cooldown:
