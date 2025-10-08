@@ -1,3 +1,6 @@
+from mario import Mario
+from peach import Peach
+
 import time
 
 class Personaje: 
@@ -28,5 +31,53 @@ def salto(self):
 def vidas (self, ):
     return self._vidas
 
+def dondeEstoy(self):
+    return (self._posicion_x, self._posicion_y)
 
 
+
+def obtenerPersonaje():
+    return Mario, Peach
+
+def seleccionarPersonaje():
+    if seleccionarPersonaje == 1:
+        return Mario("Mario", 3, 0, 0)
+    if seleccionarPersonaje == 2:
+        return Peach("Peach", 3, 0, 0)
+
+#menu
+def menu():
+    print("Seleccione un personaje:")
+    print("1. Mario")
+    print("2. Peach")
+    seleccionarPersonaje = int(input("Ingrese el número del personaje que desea seleccionar: "))
+    personaje = seleccionarPersonaje()
+    print(f"Has seleccionado a {personaje._nombre} con {personaje._vidas} vidas.")
+    return personaje
+
+def menuMario():
+    while True:
+        print("\n--- MENÚ PERSONAJE ---")
+        print("1. Mover izquierda")
+        print("2. Mover derecha")
+        print("3. Saltar")
+        print("4. Acción especial")
+        print("5. Mostrar estado")
+        print("0. cerrar")
+        
+        opc = int(input("Seleccione una opción: "))
+        if opc == 0:
+            break
+        elif opc == 1:
+            Personaje.mover("izquierda")    
+        elif opc == 2:
+            Personaje.mover("derecha")  
+        elif opc == 3: 
+            Personaje.salto("salto")
+        elif opc == 4:
+            if Personaje == Mario:
+                Personaje.tirarFuego()
+            elif Personaje == Peach:
+                Personaje.planear_activado()
+        elif opc == 5:
+            print(f"Posición: {Personaje.dondeEstoy()} | Vidas: {Personaje.vidas()}")

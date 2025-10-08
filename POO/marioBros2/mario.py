@@ -5,7 +5,7 @@ class Mario(Personaje):
         super().__init__(nombre, daño, vidas, posicion_x, posicion_y)
         self._tirarFuego = tirarFuego
 
-    def tirar_fuego(self):
+    def tirarFuego(self):
         if self._tirarFuego:
             return "lanzaste una bola de fuego"
     
